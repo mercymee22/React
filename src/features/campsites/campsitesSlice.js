@@ -12,14 +12,16 @@ const campsitesSlice = createSlice({
 
 export const campsitesReducer = campsitesSlice.reducer;
 
-export const selectAllCampsites = () => {
-    return CAMPSITES;
+export const selectAllCampsites = (state) => {  //When selectAllCampsites function is called back by useSelector, useSelector has access to the redux store and useSelector will pass the global state variable to selectAllCampsites. selectAllCampsites will receieve it via it's parameter list "(state)".
+    return state.campsites.campsitesArray;
 };
 
-export const selectCampsiteById = (id) => {
-    return CAMPSITES.find((campsite) => campsite.id === parseInt(id));  {/*parseInt converts string value to an integer, so we are comparing an iteger to an integer*/}
+export const selectCampsiteById = (id) => (state) => {
+    return state.campsites.campsitesArray.find(
+        (campsite) => campsite.id === parseInt(id)
+    );
 };
 
-export const selectFeaturedCampsite = () => {
-    return CAMPSITES.find((campsite) => campsite.featured); {/*returns the object when the featured value of the propery equals true*/}
-}
+export const selectFeaturedCampsite = (state) => {
+    return state.campsites.campsitesArray.find((campsite) => campsite.featured);
+};

@@ -1,9 +1,11 @@
+import { useSelector } from 'react-redux';
 import { Col, Row } from 'reactstrap';
 import CampsiteCard from "./CampsiteCard";
 import { selectAllCampsites } from './campsitesSlice';
 
 const CampsitesList = () => {
-    const campsites = selectAllCampsites();
+    const campsites = useSelector(selectAllCampsites);  //Passing the selectAllCampsites function selector into the useSelector hook as a callback function, to give selectAllCampsites selector access to the application state stored by Redux. 
+    console.log('campsites:', campsites);
 
     return(
         <Row className='ms-auto'>
