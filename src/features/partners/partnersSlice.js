@@ -10,6 +10,8 @@ const partnersSlice = createSlice({
     initialState
 });
 
+export const partnersReducer = partnersSlice.reducer;
+
 export const selectAllPartners = (state) => {
     return state.partners.partnersArray;
 };

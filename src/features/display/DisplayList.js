@@ -1,9 +1,8 @@
 import { Col, Row } from 'reactstrap';
-// import DisplayCard from './DisplayCard';
 import AnimatedDisplayCard from './AnimatedDisplayCard';
 import { selectFeaturedCampsite } from '../campsites/campsitesSlice';
 import { selectFeaturedPromotion } from '../promotions/promotionsSlice';
-import { selectFeaturedPartner, selectedFeaturedPartner } from '../partners/partnersSlice';
+import { selectFeaturedPartner } from '../partners/partnersSlice';
 import { useSelector } from 'react-redux';
 
 const DisplayList = () => {

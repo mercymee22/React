@@ -5,10 +5,12 @@ const initialState = {
     promotionsArray: PROMOTIONS
 };
 
-const promotionSlice = createSlice({
+const promotionsSlice = createSlice({
     name: 'promotions',
     initialState
 });
+
+export const promotionsReducer = promotionsSlice.reducer;
 
 export const selectFeaturedPromotion = (state) => {
     return state.promotions.promotionsArray.find((promotion) => promotion.featured);  {/*finds first object where featured property equals true*/}
